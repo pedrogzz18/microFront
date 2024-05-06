@@ -7,10 +7,20 @@ import { Observable } from 'rxjs';
 })
 export class IngresosService {
   private apiUrl = 'http://ec2-18-116-81-192.us-east-2.compute.amazonaws.com:8080'; // Reemplaza con la URL de tu API
+  private ingresos : any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.http.get<any[]>(this.apiUrl + '/dashboardIngresos').subscribe(
+      data => {
+        this.ingresos = data;
+      },
+      error => {
+        console.error('Error al obtener los ingresos:', error);
+      }
+    );
+  }
 
-  getIngresos(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl + '/dashboardIngresos');
+  getIngresos(): any {
+    return this.ingresos
   }
 }

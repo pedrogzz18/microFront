@@ -16,13 +16,6 @@ export class ResidentesComponent implements OnInit {
 
   
   ngOnInit(): void {
-    this.residenteService.getResidentes().subscribe(
-      data => {
-        this.residentes = data;
-      },
-      error => {
-        console.error('Error al obtener los registros:', error);
-      }
-    );
+    this.residentes = this.residenteService.getResidentes();
   }
 }

@@ -10,18 +10,14 @@ import { NgFor } from '@angular/common';
   styleUrl: './ingresos.component.css'
 })
 export class IngresosComponent {
-  ingresos: any[] = [];
+  ingresos: any;
 
   constructor(private ingresosService: IngresosService){}
 
   ngOnInit(): void {
-    this.ingresosService.getIngresos().subscribe(
-      data => {
-        this.ingresos = data;
-      },
-      error => {
-        console.error('Error al obtener los registros:', error);
-      }
-    );
+    this.ingresos = this.ingresosService.getIngresos();
+    this.ingresos.sort((a, b) => {
+      return (- new Date(`${a.fecha}T${a.hora}`).getTime() + new Date(`${b.fecha}T${b.hora}`).getTime());
+    });
   }
 }
