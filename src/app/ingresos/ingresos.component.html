@@ -1,0 +1,29 @@
+<h2>Registros de la Base de Datos</h2>
+
+<table class=tabla-vanguardista>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>ID Residente</th>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>RFID</th>
+
+      <!-- Agrega más columnas según los campos de tus registros -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ingreso of ingresos">
+      <td>{{ ingreso.id }}</td>
+      <td>{{ ingreso.fecha }}</td>
+      <td>{{ ingreso.hora }}</td>
+      <td>{{ ingreso.residente_id }}</td>
+      <td>{{ ingreso.residente_nombre }}</td>
+      <td>{{ ingreso.residente_apellidos }}</td>
+      <td>{{ ingreso.rfid_code }}</td>
+      <!-- Agrega más celdas según los campos de tus registros -->
+    </tr>
+  </tbody>
+</table>
