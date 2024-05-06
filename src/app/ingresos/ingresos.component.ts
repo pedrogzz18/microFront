@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IngresosService } from './ingresos.service';
+import { IngresosService } from '../service/ingresos.service';
 import { NgFor } from '@angular/common';
 
 @Component({

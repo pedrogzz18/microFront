@@ -1,0 +1,27 @@
+<h2>Residentes</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Calle</th>
+      <th>Domicilio</th>
+      <th>Telefono</th>
+
+      <!-- Agrega más columnas según los campos de tus registros -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let residente of residentes">
+      <td>{{ residente.id }}</td>
+      <td>{{ residente.nombre }}</td>
+      <td>{{ residente.apellidos }}</td>
+      <td>{{ residente.calle }}</td>
+      <td>{{ residente.domicilio }}</td>
+      <td>{{ residente.telefono }}</td>
+      <!-- Agrega más celdas según los campos de tus registros -->
+    </tr>
+  </tbody>
+</table>
